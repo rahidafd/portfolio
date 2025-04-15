@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahid Ullah| Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: Black;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #eebe64;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 152, 219, 0.8) 100%);
+            color: white;
+            text-align: left;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        #about {
+            background-color: var(--light-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items:center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+          
+        }
+        
+        .skills {
+            margin-top: 50px;
+            margin-left: 2;
+        }
+        
+        .skills h3 {
+            margin-bottom: 20px;
+            text-align:center;
+            flex: 2;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            font-family:sans-serif;
+            
+        }
+        .skill-tags :hover{
+            color: rgb(3, 3, 3);
+            background-color:#eebe64;
+
+        }
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .about-actions {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 5%;
+        }
+        .about-actions :hover{
+            background-color: #eebe64;
+
+        }
+        /* Experience Section */
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .experience-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .experience-date {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .experience-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .experience-company {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .experience-description {
+            margin-left: 20px;
+        }
+        
+        .experience-description ul {
+            list-style-position: inside;
+        }
+        
+        .experience-description li {
+            margin-bottom: 5px;
+        }
+        
+        /* My Certificate Section */
+        #MyCertificate {
+            background-color: var(--light-color);
+        }
+        
+        .MyCertificate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .MyCertificate-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .MyCertificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .MyCertificate-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .MyCertificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .MyCertificate-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .MyCertificate-info {
+            padding: 20px;
+        }
+        
+        .MyCertificate-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .MyCertificate-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .MyCertificate-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .MyCertificate-links a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: black;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            /* Tablet styles */
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .skill-tags {
+                gap: 15px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Small tablet and large mobile styles */
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .profile-img {
+                width: 220px;
+                height: 220px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .skill-tags {
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-col {
+                text-align: center;
+            }
+            
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .footer-links li {
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Mobile styles */
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .section-title::after {
+                width: 60px;
+            }
+            
+            .experience-item {
+                padding-left: 40px;
+            }
+            
+            .experience-item::before {
+                left: 15px;
+            }
+            
+            .experience-item::after {
+                left: 10px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skill-tag {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="profile-pic.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Rahid <span>Portfolio</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#MyCertificate">My Certificate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Rahid Ullah</h1>
+                <p>A passionate cybersecurity learner and google cybersecurity certified. I love to work with hardwork people, and i have ability to implement my knoweldge in practical envorinment.</p>
+                <a href="#MyCertificate" class="btn">View My Certificate</a>
+            </div>
+            <div class="hero-image">
+                <img src= "profile-pic.png" alt="Rahid Ullah" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a BS Computer Science student at the Agriculture University of Peshawar, currently enrolled in the CS/IT department. I hold a Diploma in Information Technology (DIT) from Kabul Computer Center and am also CCNA certified.</p>
+                    <p>With a strong interest in cybersecurity and network security, I have actively participated as a volunteer in university-based technical activities. I am committed to continuous learning and aim to contribute to secure and efficient IT infrastructures.</p>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag btn">Network Topology</span>
+                            <span class="skill-tag btn">Port Security</span>
+                            <span class="skill-tag btn">Routing & Switching</span>
+                            <span class="skill-tag btn">Manage Network</span>
+                            <span class="skill-tag btn">Network Security</span>
+                            <span class="skill-tag btn">vulnerability Assesment</span>
+                            <span class="skill-tag btn">Defence & Depth</span>
+                            <span class="skill-tag btn">Python Automation</span>
+                            <span class="skill-tag btn">Structure Queiry Language</span>
+                            <span class="skill-tag btn">Linux/Ubuntu</span>
+                      	    <span class="skill-tag btn">SEIM Tools</span>
+                              <span class="skill-tag btn">Soft Communication</span>
+                        </div>
+                    </div>
+                    <div class="about-actions">
+                        <a href="My Update Resume 2025.pdf" class="btn">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <span class="experience-date">Jan 2025 - Present</span>
+                    <h3 class="experience-title">Junior Cybersecurity Analyst</h3>
+                    <p class="experience-company">Tech Solutions Inc.</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Monitor security systems and alerts to identify potential threats and vulnerabilities.</li>
+                            <li>Assist in investigating security incidents and documenting findings.</li>
+                            <li>Support the implementation of security measures and access controls.</li>
+                            <li>Conduct basic risk assessments and report on security posture.</li>
+                            <li>Stay updated on current cybersecurity trends and assist in awareness initiatives.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <span class="experience-date">Mar 2020 - Dec 2024</span>
+                    <h3 class="experience-title">Data Entry Operator</h3>
+                    <p class="experience-company">Khyber Graphics Design & Printing House</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Enter and update accurate data into computer systems and databases.</li>
+                            <li>Verify and cross-check information for errors and inconsistencies.</li>
+                            <li>Maintain confidentiality and data integrity at all times.</li>
+                            <li>Retrieve data as requested and generate relevant reports.</li>
+                            <li>Organize and maintain digital and physical records efficiently.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <span class="experience-date">April 2024 - October 2024</span>
+                    <h3 class="experience-title">Junior WordPress Developer</h3>
+                    <p class="experience-company">Freelancing</p>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Assist in designing, developing, and maintaining WordPress websites.</li>
+                            <li>Customize themes and plugins to meet specific project requirements.</li>
+                            <li>Troubleshoot and resolve website issues and bugs.</li>
+                            <li>Optimize websites for speed, performance, and SEO best practices.</li>
+                            <li>Collaborate with designers and senior developers to implement new features.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Certificate Section -->
+<section id="MyCertificate" class="section">
+    <div class="container">
+        <h2 class="section-title">My Certificates</h2>
+        <div class="MyCertificate-grid">
+            <div class="MyCertificate-card">
+                <div class="MyCertificate-image">
+                    <img src="Course 1 Certificate_page-0001.jpg" alt="Foundation of Cybersecurity">
+                </div>
+                <div class="MyCertificate-info">
+                    <h3 class="My Certificate-title">Foundation of Cybersecurity</h3>
+                    <p>This is a 1st Google certificate completed from Coursera online learning platform.</p>
+                    <div class="MyCertificate-tech">
+                        <span class="tech-tag">Define Security</span>
+                        <span class="tech-tag">Job Responsibilities</span>
+                        <span class="tech-tag">Core Skills of a Security Analyst</span>
+                        <span class="tech-tag">Value of Security</span>
+                    </div>
+                    <div class="MyCertificate-links">
+                        <a href="Course 1 Certificate_page-0001.jpg" target="_blank" rel="noopener noreferrer" class="btn">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="MyCertificate-card">
+                <div class="MyCertificate-image">
+                    <img src="Course 2 Certificate_page-0001.jpg" alt="Manage Security Risk">
+                </div>
+                <div class="MyCertificate-info">
+                    <h3 class="MyCertificate-title">Manage Security Risk</h3>
+                    <p>This is a 2nd Google certificate completed from Coursera online learning platform.</p>
+                    <div class="MyCertificate-tech">
+                        <span class="tech-tag">CISSP Eight Security Domains</span>
+                        <span class="tech-tag">Security Frameworks & Controls</span>
+                        <span class="tech-tag">Security Audits</span>
+                        <span class="tech-tag">Basic Security Tools</span>
+                        <span class="tech-tag">Protect Assets & Data</span>
+                    </div>
+                    <div class="MyCertificate-links">
+                        <a href="Course 2 Certificate_page-0001.jpg" target="_blank" rel="noopener noreferrer" class="btn">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="MyCertificate-card">
+                <div class="MyCertificate-image">
+                    <img src="Course 3 Certificate_page-0001.jpg" alt="Protect Networks & Network Security">
+                </div>
+                <div class="MyCertificate-info">
+                    <h3 class="MyCertificate-title">Protect Networks & Network Security</h3>
+                    <p>This is a 3rd Google certificate completed from Coursera online learning platform.</p>
+                    <div class="MyCertificate-tech">
+                        <span class="tech-tag">Structure of a Network</span>
+                        <span class="tech-tag">Network Operation</span>
+                        <span class="tech-tag">Network Attacks</span>
+                        <span class="tech-tag">Security Hardening</span>
+                    </div>
+                    <div class="MyCertificate-links">
+                        <a href="Course 3 Certificate_page-0001.jpg" target="_blank" rel="noopener noreferrer" class="btn">View Certificate</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                                     
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i>rahidullahafd111@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +923334346718</p>
+                        <p><i class="fas fa-map-marker-alt"></i> District Khyber Bara KPK, PK</p>
+                    </div>
+                    <h3>Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/therahid-afd"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="WhatsApp Image 2025-04-15 at 20.14.46_2aa9e27c.jpg"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Rahid Ullah</h3>
+                    <p>Cybersecurity learner and google cybersecurity certified.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">My Certificate</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Skills</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.coursera.org/courses?query=network">Networking</a></li>
+                        <li><a href="https://www.coursera.org/courses?query=digital%20marketing">Digital Marketing</a></li>
+                        <li><a href="https://www.coursera.org/specializations/intro-to-ai-for-web-developers">Ai Fronted Developer</a></li>
+                        <li><a href="https://www.coursera.org/courses?query=cybersecurity">Cybersecurity</a></li>
+                        <li><a href="https://www.coursera.org/courses?query=artificial%20intelligence">Artificial Intelligence</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Social links</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/therahid-afd"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="WhatsApp Image 2025-04-15 at 20.14.46_2aa9e27c.jpg"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+			
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Rahid Ullah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Simple form submission handler
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
