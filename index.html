@@ -332,6 +332,77 @@
         .experience-description li {
             margin-bottom: 5px;
         }
+
+         /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+        }
         
         /* My Certificate Section */
         #MyCertificate {
@@ -821,6 +892,75 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80" alt="Creative design workspace with laptop and graphics tools">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Visual Designer & Social Media Managment</h3>
+                        <p>Crafted polished brand visuals, social media posts, and promotional creatives for a local business to strengthen its digital presence.</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Branding</span>
+                            <span class="tech-tag">Canva</span>
+                            <span class="tech-tag">Photoshop</span>
+                            <span class="tech-tag">illustrator</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.behance.net/rahidullahafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-behance"></i> Behance</a>
+                            <a href="https://github.com/rahidafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/rahidullah" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80" alt="Web development workspace with code and laptop">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Linkedin Profile Designer</h3>
+                        <p>Design and revamp the LinkedIn profile for students, employees, and founders to get attention on LinkedIn.</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Banner Design</span>
+                            <span class="tech-tag">Profile image</span>
+                            <span class="tech-tag">Feature sections</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.behance.net/rahidullahafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-behance"></i> Behance</a>
+                            <a href="https://github.com/rahidafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/rahidullah" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Cybersecurity and digital protection concept with dashboard elements">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Local Business Google</h3>
+                        <p>Design and build a local business on Google through optimization and effective online presence.</p>
+                        <div class="project-tags">
+                            <span class="tech-tag">Google My Business</span>
+                            <span class="tech-tag">Local SEO</span>
+                            <span class="tech-tag">Content Design</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.behance.net/rahidullahafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-behance"></i> Behance</a>
+                            <a href="https://github.com/rahidafd/" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.linkedin.com/in/rahidullah" target="_blank" rel="noopener noreferrer" class="btn project-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
